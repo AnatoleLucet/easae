@@ -1,46 +1,49 @@
-// https://easings.net/
+// https://easgs.net/
+
+// reduce de num of chars
+const { cos: c, pow: p, sqrt: sq, sin: s, PI } = Math;
 
 export const easeInSine = (x: number): number =>
-  1 - Math.cos((x * Math.PI) / 2);
+  1 - c((x * PI) / 2);
 
-export const easeOutSine = (x: number): number => Math.sin((x * Math.PI) / 2);
+export const easeOutSine = (x: number): number => s((x * PI) / 2);
 
 export const easeInOutSine = (x: number): number =>
-  -(Math.cos(Math.PI * x) - 1) / 2;
+  -(c(PI * x) - 1) / 2;
 
 export const easeInQuad = (x: number): number => x * x;
 
 export const easeOutQuad = (x: number): number => 1 - (1 - x) * (1 - x);
 
 export const easeInOutQuad = (x: number): number =>
-  x < 0.5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2;
+  x < 0.5 ? 2 * x * x : 1 - p(-2 * x + 2, 2) / 2;
 
 export const easeInCubic = (x: number): number => x * x * x;
 
-export const easeOutCubic = (x: number): number => 1 - Math.pow(1 - x, 3);
+export const easeOutCubic = (x: number): number => 1 - p(1 - x, 3);
 
 export const easeInOutCubic = (x: number): number =>
-  x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+  x < 0.5 ? 4 * x * x * x : 1 - p(-2 * x + 2, 3) / 2;
 
 export const easeInQuart = (x: number): number => x * x * x * x;
 
-export const easeOutQuart = (x: number): number => 1 - Math.pow(1 - x, 4);
+export const easeOutQuart = (x: number): number => 1 - p(1 - x, 4);
 
 export const easeInOutQuart = (x: number): number =>
-  x < 0.5 ? 8 * x * x * x * x : 1 - Math.pow(-2 * x + 2, 4) / 2;
+  x < 0.5 ? 8 * x * x * x * x : 1 - p(-2 * x + 2, 4) / 2;
 
 export const easeInQuint = (x: number): number => x * x * x * x * x;
 
-export const easeOutQuint = (x: number): number => 1 - Math.pow(1 - x, 5);
+export const easeOutQuint = (x: number): number => 1 - p(1 - x, 5);
 
 export const easeInOutQuint = (x: number): number =>
-  x < 0.5 ? 16 * x * x * x * x * x : 1 - Math.pow(-2 * x + 2, 5) / 2;
+  x < 0.5 ? 16 * x * x * x * x * x : 1 - p(-2 * x + 2, 5) / 2;
 
 export const easeInExpo = (x: number): number =>
-  x === 0 ? 0 : Math.pow(2, 10 * x - 10);
+  x === 0 ? 0 : p(2, 10 * x - 10);
 
 export const easeOutExpo = (x: number): number =>
-  x === 1 ? 1 : 1 - Math.pow(2, -10 * x);
+  x === 1 ? 1 : 1 - p(2, -10 * x);
 
 export const easeInOutExpo = (x: number): number =>
   x === 0
@@ -48,19 +51,19 @@ export const easeInOutExpo = (x: number): number =>
     : x === 1
     ? 1
     : x < 0.5
-    ? Math.pow(2, 20 * x - 10) / 2
-    : (2 - Math.pow(2, -20 * x + 10)) / 2;
+    ? p(2, 20 * x - 10) / 2
+    : (2 - p(2, -20 * x + 10)) / 2;
 
 export const easeInCirc = (x: number): number =>
-  1 - Math.sqrt(1 - Math.pow(x, 2));
+  1 - sq(1 - p(x, 2));
 
 export const easeOutCirc = (x: number): number =>
-  Math.sqrt(1 - Math.pow(x - 1, 2));
+  sq(1 - p(x - 1, 2));
 
 export const easeInOutCirc = (x: number): number =>
   x < 0.5
-    ? (1 - Math.sqrt(1 - Math.pow(2 * x, 2))) / 2
-    : (Math.sqrt(1 - Math.pow(-2 * x + 2, 2)) + 1) / 2;
+    ? (1 - sq(1 - p(2 * x, 2))) / 2
+    : (sq(1 - p(-2 * x + 2, 2)) + 1) / 2;
 
 export const easeInBack = (x: number): number => {
   const c1 = 1.70158;
@@ -69,15 +72,15 @@ export const easeInBack = (x: number): number => {
 
 export const easeOutBack = (x: number): number => {
   const c1 = 1.70158;
-  return 1 + (c1 + 1) * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2);
+  return 1 + (c1 + 1) * p(x - 1, 3) + c1 * p(x - 1, 2);
 };
 
 export const easeInOutBack = (x: number): number => {
   const c1 = 1.70158;
   const c2 = c1 * 1.525;
   return x < 0.5
-    ? (Math.pow(2 * x, 2) * ((c2 + 1) * 2 * x - c2)) / 2
-    : (Math.pow(2 * x - 2, 2) * ((c2 + 1) * (x * 2 - 2) + c2) + 2) / 2;
+    ? (p(2 * x, 2) * ((c2 + 1) * 2 * x - c2)) / 2
+    : (p(2 * x - 2, 2) * ((c2 + 1) * (x * 2 - 2) + c2) + 2) / 2;
 };
 
 export const easeInElastic = (x: number): number =>
@@ -85,26 +88,26 @@ export const easeInElastic = (x: number): number =>
     ? 0
     : x === 1
     ? 1
-    : -Math.pow(2, 10 * x - 10) *
-      Math.sin((x * 10 - 10.75) * ((2 * Math.PI) / 3));
+    : -p(2, 10 * x - 10) *
+      s((x * 10 - 10.75) * ((2 * PI) / 3));
 
 export const easeOutElastic = (x: number): number =>
   x === 0
     ? 0
     : x === 1
     ? 1
-    : Math.pow(2, -10 * x) * Math.sin((x * 10 - 0.75) * ((2 * Math.PI) / 3)) +
+    : p(2, -10 * x) * s((x * 10 - 0.75) * ((2 * PI) / 3)) +
       1;
 
 export const easeInOutElastic = (x: number): number => {
-  const c5 = (2 * Math.PI) / 4.5;
+  const c5 = (2 * PI) / 4.5;
   return x === 0
     ? 0
     : x === 1
     ? 1
     : x < 0.5
-    ? -(Math.pow(2, 20 * x - 10) * Math.sin((20 * x - 11.125) * c5)) / 2
-    : (Math.pow(2, -20 * x + 10) * Math.sin((20 * x - 11.125) * c5)) / 2 + 1;
+    ? -(p(2, 20 * x - 10) * s((20 * x - 11.125) * c5)) / 2
+    : (p(2, -20 * x + 10) * s((20 * x - 11.125) * c5)) / 2 + 1;
 };
 
 export const easeOutBounce = (x: number): number => {
