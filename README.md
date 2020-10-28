@@ -1,12 +1,12 @@
 <p align="center">
-  <img width="500px" src="./docs/assets/code-preview.png" />
+  <img width="700px" src="./docs/assets/code-preview.png" />
 </p>
-
----
 
 <h1 align="center">Easea</h1>
 
 <p align="center">A small utility for easy easing.</p>
+
+---
 
 ## Install
 
