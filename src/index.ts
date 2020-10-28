@@ -15,7 +15,7 @@ const defaultArgs: Partial<Args> = {
   rate: 60,
 };
 
-export const easea = (args?: Args) => {
+export const easae = (args?: Args) => {
   const { duration, delay, rate, tick, easing } = {
     ...defaultArgs,
     ...args,

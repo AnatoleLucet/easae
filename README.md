@@ -1,8 +1,8 @@
 <p align="center">
-  <img width="700px" src="./docs/assets/code-preview.png" />
+  <img src="./docs/assets/code-preview.png" />
 </p>
 
-<h1 align="center">Easea</h1>
+<h1 align="center">Easae</h1>
 
 <p align="center">A small utility for easy easing.</p>
 
@@ -17,11 +17,11 @@ npm i easae
 ## Usage
 
 ```ts
-import { easea, easeInCubic } from 'easea';
+import { easae, easeInCubic } from 'easae';
 
 const modal = document.querySelector('.modal');
 
-easea({
+easae({
   // Easing function you want to use, you can find the list further in the doc.
   easing: easeInCubic,
   // This function will be called on each tick of the easing.
