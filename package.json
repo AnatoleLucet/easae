@@ -1,0 +1,20 @@
+{
+  "name": "easae",
+  "version": "0.0.0",
+  "description": "A small utility for easy easing",
+  "repository": "git@github.com:AnatoleLucet/easae.git",
+  "homepage": "https://github.com/AnatoleLucet/easae",
+  "author": "AnatoleLucet <anatole@hey.com>",
+  "license": "MIT",
+	"source": "src/index.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.module.js",
+  "unpkg": "dist/index.umd.js",
+  "scripts": {
+    "build": "microbundle",
+    "dev": "microbundle watch"
+  },
+  "devDependencies": {
+    "microbundle": "^0.12.4"
+  }
+}
