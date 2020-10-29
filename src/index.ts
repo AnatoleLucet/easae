@@ -29,7 +29,7 @@ export const easae = (args?: Args) => {
   const t = (progress: number) => {
     requestAnimationFrame(() => {
       const x = easing(progress);
-      tick(x, x * -1);
+      tick(x, 1 - x);
 
       progress += (1 / rate) * (1000 / duration);
 

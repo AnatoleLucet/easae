@@ -34,7 +34,7 @@ easae({
   easing: easeInCubic,
   // This function will be called on each tick of the easing.
   tick: (t, u) => {
-    // 't' is going from 0 to 1 and 'u' is going from 1 to 0 (u = t * -1).
+    // 't' is going from 0 to 1 and 'u' is going from 1 to 0 (u = 1-t).
     // The tick function will be called in a requestAnimationsFrame on the browser, and a setTimeout in Node.
 
     // Bellow - as an example - we set the new scale of the modal.
