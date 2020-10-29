@@ -92,28 +92,30 @@ easae({
 
 `easae` returns a promise that resolves when the easing is finished. So you can await this promise, then start the next one.
 
-```
-const { easae, easeOutBounce, easeInCubic } = require('easae');
+```ts
+import { easae, easeOutBounce, easeInCubic } from 'easae';
 
 async function animate() {
-	// first
-	await easae({
-		easing: easeOutBounce,
-		tick: (t) => {
-			 // ...
-		},
-		duration: 1300,
-	});
+  // first
+  await easae({
+    easing: easeOutBounce,
+    tick: (t) => {
+      // ...
+    },
+    duration: 1300,
+  });
 
-	// second
-	await easae({
-		easing: easeInCubic,
-		tick: (t) => {
-			 // ...
-		},
-		duration: 500,
-	});
+  // second
+  await easae({
+    easing: easeInCubic,
+    tick: (t) => {
+      // ...
+    },
+    duration: 500,
+  });
 }
+
+animate();
 ```
 
 ## Examples
