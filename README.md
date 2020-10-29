@@ -116,6 +116,10 @@ async function animate() {
 }
 ```
 
+## Examples
+
+See the [examples folder](examples).
+
 ## Inspiration
 
 If you're familiar with [Svelte's animation API](https://svelte.dev/docs#animate_fn), you've probably noticed the resemblance.
