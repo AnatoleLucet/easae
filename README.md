@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./docs/assets/code-preview.png" />
+  <img src="https://raw.githubusercontent.com/AnatoleLucet/easae/main/docs/assets/code-preview.png" />
 </p>
 
 <h1 align="center">Easae</h1>
